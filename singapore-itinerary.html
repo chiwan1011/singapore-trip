@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>新加坡 2/14–2/16 行程 </title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#121a33;
+      --muted:#9fb0ffcc;
+      --text:#eef2ff;
+      --accent:#7aa2ff;
+      --accent2:#8df2c5;
+      --warn:#ffcc66;
+      --border:#223059;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC","PingFang TC","Microsoft JhengHei", Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(122,162,255,.18), transparent 55%),
+                  radial-gradient(900px 500px at 90% 20%, rgba(141,242,197,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    header{
+      padding:20px 18px 10px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+    .title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    h1{margin:0;font-size:20px;letter-spacing:.2px}
+    .subtitle{margin:8px 0 0;color:var(--muted);font-size:13px}
+    .btns{display:flex;gap:10px;flex-wrap:wrap}
+    button{
+      appearance:none;
+      border:1px solid rgba(122,162,255,.35);
+      background: rgba(122,162,255,.14);
+      color: #eef2ff;
+      padding:9px 12px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-size:13px;
+    }
+    button:hover{background: rgba(122,162,255,.20)}
+    .ghost{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.10);
+    }
+    .ghost:hover{background: rgba(255,255,255,.10)}
+    .ok{
+      background: rgba(141,242,197,.14);
+      border-color: rgba(141,242,197,.30);
+    }
+    .ok:hover{background: rgba(141,242,197,.20)}
+    main{
+      max-width:1100px;
+      margin:0 auto;
+      padding:14px 18px 40px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(18,26,51,.92), rgba(18,26,51,.78));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hd{
+      padding:14px 16px 12px;
+      border-bottom:1px solid rgba(34,48,89,.7);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(122,162,255,.35);
+      background: rgba(122,162,255,.10);
+      color: #dbe6ff;
+    }
+    .content{
+      padding:14px 16px 18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+    }
+    @media (max-width: 960px){ .content{grid-template-columns:1fr} }
+
+    .section{
+      border:1px solid rgba(34,48,89,.55);
+      border-radius: 14px;
+      padding:12px 12px 10px;
+      background: rgba(11,16,32,.28);
+    }
+    .section h3{
+      margin:0 0 10px;
+      font-size:13px;
+      color:#dbe6ff;
+      letter-spacing:.2px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    label{font-size:12px;color:#dbe6ff}
+    input, select, textarea{
+      width:100%;
+      padding:10px 10px;
+      border-radius:12px;
+      border:1px solid rgba(34,48,89,.9);
+      background: rgba(11,16,32,.55);
+      color: var(--text);
+      font-size:13px;
+      outline:none;
+    }
+    textarea{min-height:90px;resize:vertical}
+    input:focus, select:focus, textarea:focus{border-color: rgba(122,162,255,.6)}
+    .field{flex:1; min-width:160px}
+    .field.small{min-width:120px; max-width:220px}
+    .field.tiny{min-width:90px; max-width:140px}
+    .divider{height:1px;background: rgba(34,48,89,.6);margin:12px 0}
+
+    /* Budget UI */
+    .statgrid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (max-width: 900px){ .statgrid{grid-template-columns:repeat(2,1fr)} }
+    .stat{
+      border:1px solid rgba(34,48,89,.55);
+      background: rgba(18,26,51,.35);
+      border-radius:14px;
+      padding:10px 10px;
+    }
+    .stat .k{font-size:12px;color:var(--muted)}
+    .stat .v{font-size:16px;font-weight:800;margin-top:3px}
+    .stat .v.good{color:var(--accent2)}
+    .stat .v.bad{color:var(--warn)}
+    .dailygrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (max-width: 900px){ .dailygrid{grid-template-columns:1fr} }
+    .daybox{
+      border:1px solid rgba(34,48,89,.55);
+      background: rgba(18,26,51,.30);
+      border-radius:14px;
+      padding:10px 10px;
+    }
+    .daybox .top{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      margin-bottom:6px;
+    }
+    .daybox .d{font-weight:800}
+    .daybox .s{font-family:var(--mono);font-size:12px;color:var(--muted)}
+    .daybox .amt{font-size:18px;font-weight:900;margin-top:2px}
+    .daybox .amt.good{color:var(--accent2)}
+    .daybox .amt.bad{color:var(--warn)}
+    .daybox .mini{font-size:12px;color:var(--muted);margin-top:6px}
+    .danger{
+      border-color: rgba(255,204,102,.45) !important;
+      background: rgba(255,204,102,.08) !important;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      overflow:hidden;
+      border-radius:12px;
+      border:1px solid rgba(34,48,89,.55);
+      background: rgba(18,26,51,.25);
+    }
+    th, td{
+      padding:10px 10px;
+      border-bottom:1px solid rgba(34,48,89,.45);
+      font-size:12px;
+      text-align:left;
+      vertical-align:top;
+    }
+    th{color:#dbe6ff;background: rgba(122,162,255,.06)}
+    tr:last-child td{border-bottom:none}
+    .right{text-align:right}
+    .muted{color:var(--muted)}
+    .hint{font-size:12px;color:var(--muted);margin-top:6px}
+
+    .navbtn{
+      padding:7px 10px;
+      font-size:12px;
+      border-radius:10px;
+      margin-right:6px;
+      margin-top:6px;
+    }
+
+    /* Itinerary view */
+    .timeline{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+    .titem{
+      display:flex;gap:10px;align-items:flex-start;
+      padding:10px 10px;border-radius:12px;
+      border:1px solid rgba(34,48,89,.45);
+      background: rgba(18,26,51,.35);
+    }
+    .time{
+      min-width:74px;
+      font-family:var(--mono);
+      font-size:12px;
+      color:#cfe0ff;
+      padding-top:2px;
+    }
+    .tmain{flex:1;font-size:13px}
+    .place{font-weight:700;color:#f3f6ff}
+
+    /* Per-item photo + transport */
+    .trow{display:flex; gap:10px; align-items:flex-start}
+    .tthumb{
+      width:84px;
+      height:56px;
+      border-radius:10px;
+      object-fit:cover;
+      border:1px solid rgba(34,48,89,.55);
+      background: rgba(18,26,51,.35);
+      flex:0 0 auto;
+    }
+    @media (max-width: 520px){
+      .tthumb{width:72px;height:50px}
+    }
+    .tactions{margin-top:8px; display:flex; gap:8px; flex-wrap:wrap}
+    .tbtn{
+      padding:6px 10px;
+      font-size:12px;
+      border-radius:10px;
+    }
+    .tpanel{margin-top:10px; display:none}
+    .tpanel.open{display:block}
+    .note{margin-top:6px;color:var(--muted);font-size:12px;white-space:pre-wrap}
+    .route{
+      font-family:var(--mono);
+      font-size:12px;
+      color:#dbe6ff;
+      background: rgba(122,162,255,.08);
+      border:1px solid rgba(122,162,255,.22);
+      padding:10px 10px;
+      border-radius: 12px;
+      line-height:1.45;
+      white-space: pre-wrap;
+    }
+    .pill{
+      border:1px solid rgba(34,48,89,.8);
+      background: rgba(11,16,32,.40);
+      padding:8px 10px;
+      border-radius:14px;
+      font-size:12px;
+      color: #eaf0ff;
+    }
+    .pill strong{color:var(--accent2)}
+    .warn{color:var(--warn);font-weight:800}
+    .toast{
+      position:fixed;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:16px;
+      background: rgba(18,26,51,.92);
+      border:1px solid rgba(122,162,255,.35);
+      color:#eef2ff;
+      padding:10px 12px;
+      border-radius:12px;
+      box-shadow: var(--shadow);
+      display:none;
+      z-index:999;
+      font-size:12px;
+    }
+
+    /* Place photos */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (max-width: 1000px){ .gallery{grid-template-columns: repeat(2, 1fr);} }
+    .gcard{
+      border:1px solid rgba(34,48,89,.55);
+      background: rgba(18,26,51,.30);
+      border-radius:14px;
+      overflow:hidden;
+    }
+    .gcard img{
+      width:100%;
+      height:118px;
+      object-fit:cover;
+      display:block;
+    }
+    .gcap{
+      padding:8px 10px;
+      font-size:12px;
+      color:#dbe6ff;
+    }
+    .gcap .sub{
+      display:block;
+      margin-top:3px;
+      font-size:11px;
+      color: var(--muted);
+    }
+
+    /* Day layout + transport panel */
+    .dayhead{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:0 0 10px;
+    }
+    .dayhead h3{ margin:0; }
+    .daygrid{
+      display:grid;
+      grid-template-columns: 1fr 280px;
+      gap:12px;
+      align-items:start;
+    }
+    @media (max-width: 860px){
+      .daygrid{ grid-template-columns: 1fr; }
+    }
+    .dayphoto{
+      border:1px solid rgba(34,48,89,.55);
+      background: rgba(18,26,51,.22);
+      border-radius:14px;
+      overflow:hidden;
+    }
+    .dayphoto img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      display:block;
+    }
+    @media (max-width: 860px){
+      .dayphoto img{ height:160px; }
+    }
+    .routePanel{
+      margin-top:10px;
+      display:none;
+    }
+    .routePanel.open{ display:block; }
+
+    /* Share lock banner */
+    .lockbar{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+      align-items:center;
+    }
+    .lockchip{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(141,242,197,.30);
+      background: rgba(141,242,197,.10);
+      color:#ddfff1;
+    }
+    .lockchip.off{
+      border-color: rgba(255,204,102,.35);
+      background: rgba(255,204,102,.10);
+      color:#ffe9bf;
+    }
+    code.inline{
+      font-family: var(--mono);
+      font-size: 12px;
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid rgba(34,48,89,.8);
+      background: rgba(11,16,32,.45);
+      color:#dbe6ff;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="title">
+    <div>
+      <h1 id="pageTitle">新加坡 2/14–2/16 行程（可編輯/可分享鎖編輯）</h1>
+      <p class="subtitle" id="pageSub">2/14 環球、2/15 動物園、2/16 08:10 起飛（建議 05:00 出發）。</p>
+      <div class="lockbar">
+        <span id="modeChip" class="lockchip">🔒 分享模式：唯讀</span>
+        <span class="pill"> 進入編輯</span>
+      </div>
+    </div>
+    <div class="btns">
+      <button id="copyShareLinkBtn" class="ok">複製分享連結（唯讀）</button>
+      <button id="copyEditHintBtn" class="ghost">複製我的編輯提示</button>
+      <button id="printBtn" class="ghost">列印 / 存 PDF</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Itinerary (editable) -->
+  <section class="card" id="itineraryCard">
+    <div class="hd">
+      <h2>🗓 行程內容（你可在編輯模式修改）</h2>
+      <span class="tag">朋友開分享連結＝唯讀</span>
+    </div>
+
+    <div class="content">
+      <div class="section">
+        <h3>👀 顯示版（給朋友看）</h3>
+        <div class="row" style="margin-bottom:10px;">
+          <div class="pill">✅ 2/14：<strong>環球影城</strong>＋魚尾獅＋海濱花園＋Lau Pa Sat</div>
+          <div class="pill">✅ 2/15：<strong>動物園</strong>＋Maxwell/Chinatown＋Clarke Quay</div>
+          <div class="pill"><span class="warn">2/16 05:00</span> 出發去機場</div>
+        </div>
+
+
+        <div id="itineraryView"></div>
+      </div>
+
+      <div class="section" id="editorSection" style="display:none;">
+        <h3>✍️ 編輯版（只有你在 #edit 才會出現）</h3>
+        <label>直接改下面文字，按「儲存」就會更新左邊顯示版（並存在你的瀏覽器）。</label>
+        <textarea id="itineraryEditor" placeholder="在這裡修改行程..."></textarea>
+        <div class="row" style="margin-top:10px;">
+          <button id="saveItineraryBtn" class="ok">儲存行程</button>
+          <button id="resetItineraryBtn" class="ghost">還原預設行程</button>
+        </div>
+        <p class="hint">備註：朋友打開唯讀連結時，看不到編輯器，也不會改到你的資料（因為資料存在你的瀏覽器 localStorage）。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Budget -->
+  <section class="card" id="budgetCard">
+    <div class="hd">
+      <h2>💰 預算統計（含每日小計）</h2>
+      <span class="tag">輸入花費→自動算總計/每日小計</span>
+    </div>
+    <div class="content">
+      <div class="section">
+        <h3>📌 設定</h3>
+        <div class="row">
+          <div class="field small">
+            <label>幣別</label>
+            <select id="currency">
+              <option value="SGD">SGD 新幣</option>
+              <option value="TWD">TWD 台幣</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>總預算</label>
+            <input id="budgetTotal" type="number" inputmode="decimal" placeholder="例如 180" />
+          </div>
+          <div class="field tiny">
+            <label>人數</label>
+            <input id="people" type="number" inputmode="numeric" min="1" placeholder="1" />
+          </div>
+        </div>
+
+        <div class="statgrid">
+          <div class="stat"><div class="k">已花費</div><div class="v" id="spent">—</div></div>
+          <div class="stat"><div class="k">剩餘預算</div><div class="v" id="remaining">—</div></div>
+          <div class="stat"><div class="k">每日平均可用（剩餘/2天）</div><div class="v" id="perDay">—</div></div>
+          <div class="stat"><div class="k">人均已花</div><div class="v" id="perPerson">—</div></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>🧾 每日小計</h3>
+        <div class="dailygrid">
+          <div class="daybox" id="daybox-2026-02-14">
+            <div class="top"><div class="d">2/14（五）</div><div class="s">USS＋濱海灣</div></div>
+            <div class="amt" id="sub-2026-02-14">—</div>
+            <div class="mini" id="cnt-2026-02-14">—</div>
+          </div>
+          <div class="daybox" id="daybox-2026-02-15">
+            <div class="top"><div class="d">2/15（六）</div><div class="s">動物園＋夜生活</div></div>
+            <div class="amt" id="sub-2026-02-15">—</div>
+            <div class="mini" id="cnt-2026-02-15">—</div>
+          </div>
+          <div class="daybox" id="daybox-2026-02-16">
+            <div class="top"><div class="d">2/16（日）</div><div class="s">回程早上</div></div>
+            <div class="amt" id="sub-2026-02-16">—</div>
+            <div class="mini" id="cnt-2026-02-16">—</div>
+          </div>
+        </div>
+
+        <p class="hint">提醒：朋友開唯讀連結時，也能記他自己的花費（存在他自己的手機），不會影響你。</p>
+      </div>
+
+      <div class="section">
+        <h3>➕ 新增花費</h3>
+        <div class="row">
+          <div class="field small">
+            <label>日期</label>
+            <select id="expDay">
+              <option value="2026-02-14">2/14（五）</option>
+              <option value="2026-02-15">2/15（六）</option>
+              <option value="2026-02-16">2/16（日）</option>
+            </select>
+          </div>
+
+          <div class="field small">
+            <label>分類</label>
+            <select id="category">
+              <option value="Food">🍜 餐飲</option>
+              <option value="Transport">🚇 交通</option>
+              <option value="Tickets">🎫 門票</option>
+              <option value="Shopping">🛍️ 購物</option>
+              <option value="Hotel">🏨 住宿</option>
+              <option value="Other">🧾 其他</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>項目</label>
+            <input id="title" type="text" placeholder="例如：Lau Pa Sat 沙嗲" />
+          </div>
+
+          <div class="field small">
+            <label>金額</label>
+            <input id="amount" type="number" inputmode="decimal" placeholder="例如 18" />
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+          <button class="ok" id="addBtn">新增</button>
+          <button class="ghost" id="exportBtn">匯出 CSV</button>
+          <button class="ghost" id="resetBtn">清空全部資料</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>📒 明細</h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="width:96px;">日期</th>
+              <th style="width:96px;">分類</th>
+              <th>項目</th>
+              <th class="right" style="width:110px;">金額</th>
+              <th class="right" style="width:90px;">操作</th>
+            </tr>
+          </thead>
+          <tbody id="expenseRows"></tbody>
+        </table>
+
+        <p class="hint">小撇步：門票/交通先記，回來超好算。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // =======================
+  // Read-only share & edit mode
+  // - Default: share-mode (read-only) => no editor
+  // - Your edit mode: add #edit at end of URL
+  //   Example:
+  //     https://your-site.com/sg.html#edit
+  // =======================
+  const isEditMode = (location.hash || "").toLowerCase().includes("edit");
+
+  function toast(msg){
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.style.display = "block";
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(()=> t.style.display="none", 1600);
+  }
+
+  function setModeUI(){
+    const chip = document.getElementById("modeChip");
+    const editor = document.getElementById("editorSection");
+    if(isEditMode){
+      chip.textContent = "✍️ 編輯模式：你可以修改行程（網址含 #edit）";
+      chip.classList.remove("off");
+      editor.style.display = "block";
+    }else{
+      chip.textContent = "🔒 分享模式：唯讀（朋友無法編輯）";
+      chip.classList.add("off");
+      editor.style.display = "none";
+    }
+  }
+
+  // =======================
+  // Itinerary editable text (stored locally)
+  // =======================
+  const ITIN_KEY = "sg_itinerary_text_v1";
+
+  const DEFAULT_ITIN = `
+【2/14（五）環球＋濱海灣夜景＋吃爆】
+04:00 抵達樟宜（SIN）
+05:00–06:30 Jewel 星耀樟宜（瀑布＋早餐）
+06:45 出發去 Sentosa
+09:00–16:30 Universal Studios Singapore（先衝 Transformers / Battlestar / 木乃伊）
+16:30–17:30 回 Chinatown 放行李/休息
+18:00 魚尾獅公園（Merlion Park）
+19:45 Gardens by the Bay Supertree 燈光秀（免費）
+20:45 Lau Pa Sat 沙嗲封街（沙嗲/炒粿條/蠔煎）
+22:30 回 Chinatown
+
+【2/15（六）動物園＋夜生活＋吃爆】
+07:45 出發去 Zoo（Chinatown → Dhoby Ghaut → Khatib → Shuttle）
+09:00–14:00 Singapore Zoo
+14:00–17:00 回市區休息/沖澡
+17:30 Maxwell Food Centre（晚餐第一攤）
+19:00 Clarke Quay 河岸夜生活（酒吧/夜景）
+22:00 回 Chinatown 宵夜/整理行李（明天 05:00 出發）
+
+【2/16（日）回程】
+04:30 起床/退房
+05:00 出發去機場（建議 Grab）
+08:10 起飛回台北
+`.trim();
+
+  function loadItinerary(){
+    try{
+      const raw = localStorage.getItem(ITIN_KEY);
+      if(!raw) return DEFAULT_ITIN;
+      return String(raw);
+    }catch(e){
+      return DEFAULT_ITIN;
+    }
+  }
+
+  function saveItinerary(text){
+    localStorage.setItem(ITIN_KEY, text);
+  }
+
+  function renderItineraryView(text){
+    const lines = String(text || "").split("\n");
+    const container = document.getElementById("itineraryView");
+    container.innerHTML = "";
+
+    // Render as sections with simple parsing: lines starting with 【...】 as headings
+    const PLACE_META = [
+      {
+        keys: ["jewel", "星耀", "樟宜"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Jewel%20Changi%20%28I%29.jpg?width=800",
+        alt: "Jewel Changi",
+        hours: "Rain Vortex：每日 10:00–24:00；燈光秀（瀑布燈）：週一–四 20:00/21:00、週五–日/假日 20:00/21:00/22:00",
+        route: `【到 Jewel / 樟宜星耀】\n- 你已在機場，跟著 Jewel 指標步行即可（不用搭車）`
+      },
+      {
+        keys: ["universal", "uss", "環球"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Universal%20Studios%20Singapore.jpg?width=800",
+        alt: "Universal Studios Singapore",
+        hours: "USS 營運時間每日可能不同（依官網日曆）；常見約 10:00 開園（建議前一天確認）",
+        route: `【到 USS（Sentosa）】\n- MRT：Changi Airport(CG2) → Tanah Merah(EW4) → Outram Park(EW16/NE3) → HarbourFront(NE1)\n- HarbourFront 出站 → VivoCity L3 搭 Sentosa Express → Waterfront → 步行 5–8 分鐘\n- 省力：Grab 直達 USS（最不燒腦）`
+      },
+      {
+        keys: ["merlion", "魚尾獅"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Merlion%20Park.JPG?width=800",
+        alt: "Merlion Park",
+        hours: "戶外景點，全天可逛；最佳拍照：日落前後",
+        route: `【到 魚尾獅公園】\n- 從 Chinatown：\n  - MRT：Chinatown(DT19) → Downtown(DT17) / Telok Ayer(DT18) 後步行 10–15 分鐘\n  - 或 Chinatown(NE4) → Raffles Place(EW14/NS26) 步行 8–12 分鐘`
+      },
+      {
+        keys: ["gardens", "supertree", "海濱花園", "濱海花園"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Supertree%20Grove%2C%20Gardens%20by%20the%20Bay%2C%20Singapore%20-%2020120712-02.jpg?width=800",
+        alt: "Gardens by the Bay",
+        hours: "Supertree Garden Rhapsody：每日 19:45 & 20:45（免費）；15–16 Feb 17:30–18:30 Supertree Grove/Meadow 可能管制",
+        route: `【到 Gardens by the Bay】\n- MRT：到 Bayfront(CE1/DT16) 後步行進園\n- 從 Merlion：步行約 20–30 分鐘（看天氣）或搭車更舒服`
+      },
+      {
+        keys: ["lau pa sat", "lau", "pa", "sat", "老巴剎", "lau pa"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Lau%20Pa%20Sat.JPG?width=800",
+        alt: "Lau Pa Sat",
+        hours: "多數攤位到晚間；沙嗲街通常傍晚後最熱鬧（實際以現場為準）",
+        route: `【到 Lau Pa Sat】\n- MRT：Downtown(DT17) / Telok Ayer(DT18) 下車步行 6–12 分鐘\n- 吃完回 Chinatown：搭 DT 線回 Chinatown(DT19) 或 Grab`
+      },
+      {
+        keys: ["zoo", "動物園", "mandai"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Entrance%20-%20Singapore%20Zoo%20%2801%29.jpg?width=800",
+        alt: "Singapore Zoo",
+        hours: "Singapore Zoo：每日 08:30–18:00（最後入園 17:00）",
+        route: `【到 新加坡動物園（最順）】\n- MRT：Chinatown(NE4) → Dhoby Ghaut(NE6/NS24) → Khatib(NS14)\n- Khatib 站外搭 Mandai Khatib Shuttle 直達 Zoo`
+      },
+      {
+        keys: ["maxwell"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Maxwell%20Food%20Centre%20-%20Singapore.jpg?width=800",
+        alt: "Maxwell Food Centre",
+        hours: "熟食中心營業時間各攤不同；建議 17:30 後晚餐時段去",
+        route: `【到 Maxwell Food Centre】\n- 從 Chinatown：走路約 10–20 分鐘（看你住哪一側）\n- 或 MRT：Outram Park / Tanjong Pagar 附近下車步行`
+      },
+      {
+        keys: ["clarke", "quay", "克拉碼頭"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Clarke%20Quay%2C%20Singapore%2C%20at%20night%20-%2020070202-02.jpg?width=800",
+        alt: "Clarke Quay",
+        hours: "夜生活區；酒吧/餐廳多在傍晚後開始熱鬧",
+        route: `【到 Clarke Quay】\n- MRT：Chinatown(NE4) → Clarke Quay(NE5)（1 站）\n- 或走路約 12–20 分鐘（看路線）`
+      },
+      {
+        keys: ["chinatown", "牛車水", "唐人街", "回 chinatown", "回chinatown"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Chinatown%20Singapore%20%28Smith%20Street%29.jpg?width=800",
+        alt: "Chinatown",
+        hours: "住宿區/美食區；晚餐與宵夜選擇多（店家營業依各店為準）",
+        route: `【回 Chinatown（住宿區）】\n- MRT：就近搭 NE/DT 線回 Chinatown（看你人在 HarbourFront / Bayfront / Downtown 一帶）\n- 省腦：Grab 回住宿最舒服（尤其玩累/下雨）`
+      },
+      {
+        keys: ["機場", "changi", "sin"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Changi%20Airport%20Terminal%201%20Departure%20Hall%2C%20Singapore%20-%202018.jpg?width=800",
+        alt: "Changi Airport",
+        hours: "機場 24 小時；清晨 MRT 班距較長，建議抓多一點時間",
+        route: `【回機場】\n- 省力：Grab 直達 T1/T2（最穩）\n- MRT：Chinatown(DT19) → Expo(DT35) → 轉 CG 線到 Changi Airport(CG2)\n（清晨班距較長，抓多一點時間）`
+      }
+    ];
+
+    function normalize(s){
+      return String(s || "").toLowerCase();
+    }
+
+    function getPlaceMeta(text){
+      const t = normalize(text);
+      for(const item of PLACE_META){
+        for(const k of item.keys){
+          if(t.includes(String(k).toLowerCase())) return item;
+        }
+      }
+      return null;
+    }
+
+    let current = null;
+    let lastPlaceMeta = null; // track previous matched place
+    function newSection(title){
+      const sec = document.createElement("div");
+      sec.className = "section";
+      sec.style.marginBottom = "12px";
+
+      const h = document.createElement("h3");
+      h.textContent = title;
+      sec.appendChild(h);
+
+      const ul = document.createElement("ul");
+      ul.className = "timeline";
+      sec.appendChild(ul);
+
+      container.appendChild(sec);
+      current = ul;
+    }
+
+    for(const rawLine of lines){
+      const line = rawLine.trim();
+      if(!line) continue;
+
+      const m = line.match(/^【(.+)】$/);
+      if(m){
+        newSection(m[1]);
+        continue;
+      }
+
+      if(!current){
+        newSection("行程");
+      }
+
+      // Try to split time and content like "18:00 魚尾獅公園"
+      let time = "";
+      let rest = line;
+      const tm = line.match(/^(\d{1,2}:\d{2})(?:–(\d{1,2}:\d{2}))?\s+(.*)$/);
+      if(tm){
+        time = tm[2] ? `${tm[1]}–${tm[2]}` : tm[1];
+        rest = tm[3] || "";
+      }else{
+        // also support "05:00-06:30"
+        const tm2 = line.match(/^(\d{1,2}:\d{2})[-–](\d{1,2}:\d{2})\s+(.*)$/);
+        if(tm2){
+          time = `${tm2[1]}–${tm2[2]}`;
+          rest = tm2[3] || "";
+        }
+      }
+
+      // Per-item photo + transport
+      const textMain = rest || line;
+      const pm = getPlaceMeta(textMain);
+      let routeFromLast = "";
+      if(lastPlaceMeta && pm && lastPlaceMeta !== pm){
+        routeFromLast = `【從 ${lastPlaceMeta.alt} → ${pm.alt}】\n- 建議：Google Maps 大眾運輸模式\n- 或 Grab（時間換方便）`;
+      }
+
+      const li = document.createElement("li");
+      li.className = "titem";
+
+      const thumbHtml = pm ? `<img class="tthumb" loading="lazy" referrerpolicy="no-referrer" alt="${escapeHtml(pm.alt || "")}" src="${pm.img}" />` : "";
+      const actionsHtml = pm ? `<div class="tactions"><button type="button" class="ghost tbtn" data-transport="1" aria-expanded="false">🚇 交通</button></div>` : "";
+      const panelHtml = pm ? `<div class="tpanel" data-panel="1"><div class="route">${escapeHtml(pm.route || "")}${routeFromLast ? "\n\n" + escapeHtml(routeFromLast) : ""}</div></div>` : "";
+
+      li.innerHTML = `
+        <div class="time">${escapeHtml(time || "•")}</div>
+        <div class="tmain">
+          <div class="trow">
+            ${thumbHtml}
+            <div class="ttext">
+              <div class="place">${escapeHtml(textMain)}</div>
+              ${pm && pm.hours ? `<div class="note">🕒 ${escapeHtml(pm.hours)}</div>` : ``}
+            </div>
+          </div>
+          ${actionsHtml}
+          ${panelHtml}
+        </div>
+      `;
+
+      // wire toggle
+      if(pm){
+        const btn = li.querySelector('[data-transport="1"]');
+        const panel = li.querySelector('[data-panel="1"]');
+        if(btn && panel){
+          btn.addEventListener("click", ()=>{
+            const isOpen = panel.classList.toggle("open");
+            btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            btn.textContent = isOpen ? "🚇 收起" : "🚇 交通";
+          });
+        }
+      }
+
+      current.appendChild(li);
+      if(pm){ lastPlaceMeta = pm; }
+    }
+  }
+
+  function escapeHtml(str){
+    return String(str)
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
+  }
+
+  // =======================
+  // Budget / Expenses (daily subtotals)
+  // =======================
+  const LS_KEY = "sg_itinerary_budget_v3";
+
+  const DAYS = [
+    { key: "2026-02-14", label: "2/14", note: "USS＋濱海灣" },
+    { key: "2026-02-15", label: "2/15", note: "動物園＋夜生活" },
+    { key: "2026-02-16", label: "2/16", note: "回程早上" },
+  ];
+
+  function fmtMoney(n){
+    const cur = document.getElementById("currency").value || "SGD";
+    if (!isFinite(n)) n = 0;
+    const val = (Math.round(n * 100) / 100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    return `${cur} ${val}`;
+  }
+
+  function loadState(){
+    try{
+      const raw = localStorage.getItem(LS_KEY);
+      if(!raw) return { currency:"SGD", budgetTotal:"", people:"1", expenses:[] };
+      const s = JSON.parse(raw);
+      return {
+        currency: s.currency ?? "SGD",
+        budgetTotal: s.budgetTotal ?? "",
+        people: s.people ?? "1",
+        expenses: Array.isArray(s.expenses) ? s.expenses : []
+      };
+    }catch(e){
+      return { currency:"SGD", budgetTotal:"", people:"1", expenses:[] };
+    }
+  }
+
+  function saveState(){
+    const state = {
+      currency: document.getElementById("currency").value,
+      budgetTotal: document.getElementById("budgetTotal").value,
+      people: document.getElementById("people").value,
+      expenses: window.__expenses || []
+    };
+    localStorage.setItem(LS_KEY, JSON.stringify(state));
+  }
+
+  function calcTotals(){
+    const budgetTotal = parseFloat(document.getElementById("budgetTotal").value || "0");
+    const people = Math.max(1, parseInt(document.getElementById("people").value || "1", 10));
+    const expenses = window.__expenses || [];
+    const spent = expenses.reduce((sum, e)=> sum + (parseFloat(e.amount)||0), 0);
+    const remaining = budgetTotal - spent;
+    const perDay = remaining / 2; // 2 full days (2/14 & 2/15)
+    const perPerson = spent / people;
+
+    const spentEl = document.getElementById("spent");
+    const remainingEl = document.getElementById("remaining");
+    const perDayEl = document.getElementById("perDay");
+    const perPersonEl = document.getElementById("perPerson");
+
+    spentEl.textContent = fmtMoney(spent);
+    remainingEl.textContent = fmtMoney(remaining);
+    perDayEl.textContent = fmtMoney(perDay);
+    perPersonEl.textContent = fmtMoney(perPerson);
+
+    remainingEl.className = "v " + (remaining >= 0 ? "good" : "bad");
+    perDayEl.className = "v " + (perDay >= 0 ? "good" : "bad");
+
+    const budgetCard = document.getElementById("budgetCard");
+    if (budgetTotal > 0 && remaining < 0) budgetCard.classList.add("danger");
+    else budgetCard.classList.remove("danger");
+  }
+
+  function updateDailySubtotals(){
+    const expenses = window.__expenses || [];
+    const map = new Map(DAYS.map(d => [d.key, { sum: 0, count: 0 }]));
+    for(const e of expenses){
+      const key = e.day || "";
+      if(!map.has(key)) map.set(key, { sum: 0, count: 0 });
+      const cur = map.get(key);
+      cur.sum += (parseFloat(e.amount)||0);
+      cur.count += 1;
+    }
+
+    for(const d of DAYS){
+      const x = map.get(d.key) || { sum: 0, count: 0 };
+      const amtEl = document.getElementById(`sub-${d.key}`);
+      const cntEl = document.getElementById(`cnt-${d.key}`);
+      amtEl.textContent = fmtMoney(x.sum);
+      cntEl.textContent = `${x.count} 筆`;
+      amtEl.className = "amt " + (x.sum >= 0 ? "good" : "bad");
+    }
+  }
+
+  function catLabel(cat){
+    switch(cat){
+      case "Food": return "🍜 餐飲";
+      case "Transport": return "🚇 交通";
+      case "Tickets": return "🎫 門票";
+      case "Shopping": return "🛍️ 購物";
+      case "Hotel": return "🏨 住宿";
+      default: return "🧾 其他";
+    }
+  }
+
+  function sortExpenses(expenses){
+    return [...expenses].sort((a,b)=>{
+      if (a.day !== b.day) return (a.day||"").localeCompare(b.day||"");
+      if (a.category !== b.category) return (a.category||"").localeCompare(b.category||"");
+      return (a.createdAt||0) - (b.createdAt||0);
+    });
+  }
+
+  function prettyDay(day){
+    if(day === "2026-02-14") return "2/14";
+    if(day === "2026-02-15") return "2/15";
+    if(day === "2026-02-16") return "2/16";
+    return day || "";
+  }
+
+  function renderTable(){
+    const tbody = document.getElementById("expenseRows");
+    const expenses = sortExpenses(window.__expenses || []);
+    tbody.innerHTML = "";
+
+    if(expenses.length === 0){
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td colspan="5" class="muted">還沒有花費紀錄。先把門票/交通輸入，預算會更準。</td>`;
+      tbody.appendChild(tr);
+      updateDailySubtotals();
+      calcTotals();
+      saveState();
+      return;
+    }
+
+    for(const e of expenses){
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${prettyDay(e.day)}</td>
+        <td>${catLabel(e.category)}</td>
+        <td>${escapeHtml(e.title || "")}</td>
+        <td class="right">${fmtMoney(parseFloat(e.amount)||0)}</td>
+        <td class="right"><button class="ghost" data-del="${e.id}" style="padding:6px 10px;font-size:12px;">刪除</button></td>
+      `;
+      tbody.appendChild(tr);
+    }
+
+    tbody.querySelectorAll("button[data-del]").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        const id = btn.getAttribute("data-del");
+        window.__expenses = (window.__expenses || []).filter(x => x.id !== id);
+        renderTable();
+        toast("已刪除 ✅");
+      });
+    });
+
+    updateDailySubtotals();
+    calcTotals();
+    saveState();
+  }
+
+  function cryptoId(){
+    return (Date.now().toString(36) + Math.random().toString(36).slice(2,8)).toUpperCase();
+  }
+
+  function addExpense(){
+    const day = document.getElementById("expDay").value;
+    const category = document.getElementById("category").value;
+    const title = document.getElementById("title").value.trim();
+    const amount = parseFloat(document.getElementById("amount").value || "0");
+
+    if(!title){ toast("請先填「項目」"); return; }
+    if(!isFinite(amount) || amount <= 0){ toast("金額要 > 0"); return; }
+
+    const exp = { id: cryptoId(), day, category, title, amount: Math.round(amount * 100) / 100, createdAt: Date.now() };
+    window.__expenses = [...(window.__expenses || []), exp];
+    document.getElementById("title").value = "";
+    document.getElementById("amount").value = "";
+    renderTable();
+    toast("已新增 ✅");
+  }
+
+  function exportCSV(){
+    const cur = document.getElementById("currency").value || "SGD";
+    const expenses = sortExpenses(window.__expenses || []);
+    const header = ["date","category","title","amount","currency"].join(",");
+    const lines = expenses.map(e => [
+      e.day,
+      e.category,
+      `"${String(e.title||"").replaceAll('"','""')}"`,
+      (parseFloat(e.amount)||0),
+      cur
+    ].join(","));
+    const csv = [header, ...lines].join("\n");
+
+    const blob = new Blob([csv], {type:"text/csv;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `singapore-expenses-${cur}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    toast("已匯出 CSV ✅");
+  }
+
+  function resetAll(){
+    if(!confirm("確定要清空所有預算與花費資料？（不可復原）")) return;
+    localStorage.removeItem(LS_KEY);
+    applyState(loadState());
+    toast("已清空 ✅");
+  }
+
+  function applyState(s){
+    document.getElementById("currency").value = s.currency || "SGD";
+    document.getElementById("budgetTotal").value = s.budgetTotal ?? "";
+    document.getElementById("people").value = s.people ?? "1";
+    window.__expenses = s.expenses || [];
+    renderTable();
+  }
+
+  // =======================
+  // Share link helpers
+  // =======================
+  function shareUrlReadonly(){
+    // remove #edit if present
+    const base = location.href.split("#")[0];
+    return base; // no hash = read-only by design
+  }
+
+  function editHint(){
+    const base = location.href.split("#")[0];
+    return `要編輯這份行程：\n打開這個網址後，在最後加上 #edit\n例如：\n${base}#edit`;
+  }
+
+  async function copyText(text){
+    try{
+      await navigator.clipboard.writeText(text);
+      toast("已複製 ✅");
+    }catch(e){
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      ta.remove();
+      toast("已複製 ✅");
+    }
+  }
+
+  // =======================
+  // Bind UI
+  // =======================
+  document.getElementById("copyShareLinkBtn").addEventListener("click", ()=>{
+    copyText(shareUrlReadonly());
+  });
+  document.getElementById("copyEditHintBtn").addEventListener("click", ()=>{
+    copyText(editHint());
+  });
+  document.getElementById("printBtn").addEventListener("click", ()=> window.print());
+
+  // Budget binds
+  document.getElementById("addBtn").addEventListener("click", addExpense);
+  document.getElementById("exportBtn").addEventListener("click", exportCSV);
+  document.getElementById("resetBtn").addEventListener("click", resetAll);
+
+  ["currency","budgetTotal","people"].forEach(id=>{
+    document.getElementById(id).addEventListener("input", ()=>{
+      saveState();
+      calcTotals();
+      updateDailySubtotals();
+    });
+    document.getElementById(id).addEventListener("change", ()=>{
+      saveState();
+      calcTotals();
+      updateDailySubtotals();
+      renderTable();
+    });
+  });
+
+  ["title","amount"].forEach(id=>{
+    document.getElementById(id).addEventListener("keydown", (e)=>{
+      if(e.key === "Enter") addExpense();
+    });
+  });
+
+  // Itinerary editor binds (only in edit mode)
+  function initItinerary(){
+    const text = loadItinerary();
+    renderItineraryView(text);
+
+    if(isEditMode){
+      const ta = document.getElementById("itineraryEditor");
+      ta.value = text;
+
+      document.getElementById("saveItineraryBtn").addEventListener("click", ()=>{
+        const v = ta.value.trim();
+        if(!v){ toast("行程不能是空的"); return; }
+        saveItinerary(v);
+        renderItineraryView(v);
+        toast("行程已儲存 ✅");
+      });
+
+      document.getElementById("resetItineraryBtn").addEventListener("click", ()=>{
+        if(!confirm("確定要還原預設行程？")) return;
+        saveItinerary(DEFAULT_ITIN);
+        document.getElementById("itineraryEditor").value = DEFAULT_ITIN;
+        renderItineraryView(DEFAULT_ITIN);
+        toast("已還原 ✅");
+      });
+    }
+  }
+
+  // Init
+  setModeUI();
+  initItinerary();
+  applyState(loadState());
+</script>
+</body>
+</html>
