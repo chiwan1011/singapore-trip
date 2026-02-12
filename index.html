@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>新加坡 2/14–2/16 行程 </title>
+  <title>新加坡 2/14–2/17 行程</title>
   <style>
     :root{
       --bg:#0b1020;
@@ -400,8 +400,8 @@
 <header>
   <div class="title">
     <div>
-      <h1 id="pageTitle">新加坡 2/14–2/16 行程（可編輯/可分享鎖編輯）</h1>
-      <p class="subtitle" id="pageSub">2/14 環球、2/15 動物園、2/16 08:10 起飛（建議 05:00 出發）。</p>
+      <h1 id="pageTitle">新加坡 2/14–2/17 行程（可編輯/可分享鎖編輯）</h1>
+      <p class="subtitle" id="pageSub">2/14 環球＋濱海灣、2/15 文化層次日、2/16 動物園＋跨年煙火後直奔機場、2/17 06:10 起飛回台北。</p>
       <div class="lockbar">
         <span id="modeChip" class="lockchip">🔒 分享模式：唯讀</span>
         <span class="pill"> 進入編輯</span>
@@ -429,8 +429,9 @@
         <h3>👀 顯示版（給朋友看）</h3>
         <div class="row" style="margin-bottom:10px;">
           <div class="pill">✅ 2/14：<strong>環球影城</strong>＋魚尾獅＋海濱花園＋Lau Pa Sat</div>
-          <div class="pill">✅ 2/15：<strong>動物園</strong>＋Maxwell/Chinatown＋Clarke Quay</div>
-          <div class="pill"><span class="warn">2/16 05:00</span> 出發去機場</div>
+          <div class="pill">✅ 2/15：<strong>甘榜格南</strong>＋Tiong Bahru＋MBS SkyPark 夜景</div>
+          <div class="pill">✅ 2/16：<strong>動物園</strong>＋River Hongbao <strong>00:00 煙火</strong></div>
+          <div class="pill"><span class="warn">00:20</span> 看完煙火直接去機場過夜；<span class="warn">2/17 06:10</span> 起飛</div>
         </div>
 
 
@@ -480,7 +481,7 @@
         <div class="statgrid">
           <div class="stat"><div class="k">已花費</div><div class="v" id="spent">—</div></div>
           <div class="stat"><div class="k">剩餘預算</div><div class="v" id="remaining">—</div></div>
-          <div class="stat"><div class="k">每日平均可用（剩餘/2天）</div><div class="v" id="perDay">—</div></div>
+          <div class="stat"><div class="k">每日平均可用（剩餘/3天）</div><div class="v" id="perDay">—</div></div>
           <div class="stat"><div class="k">人均已花</div><div class="v" id="perPerson">—</div></div>
         </div>
 
@@ -489,17 +490,17 @@
         <h3>🧾 每日小計</h3>
         <div class="dailygrid">
           <div class="daybox" id="daybox-2026-02-14">
-            <div class="top"><div class="d">2/14（五）</div><div class="s">USS＋濱海灣</div></div>
+            <div class="top"><div class="d">2/14（六）</div><div class="s">環球＋濱海灣</div></div>
             <div class="amt" id="sub-2026-02-14">—</div>
             <div class="mini" id="cnt-2026-02-14">—</div>
           </div>
           <div class="daybox" id="daybox-2026-02-15">
-            <div class="top"><div class="d">2/15（六）</div><div class="s">動物園＋夜生活</div></div>
+            <div class="top"><div class="d">2/15（日）</div><div class="s">文化層次日</div></div>
             <div class="amt" id="sub-2026-02-15">—</div>
             <div class="mini" id="cnt-2026-02-15">—</div>
           </div>
           <div class="daybox" id="daybox-2026-02-16">
-            <div class="top"><div class="d">2/16（日）</div><div class="s">回程早上</div></div>
+            <div class="top"><div class="d">2/16（一）</div><div class="s">動物園＋煙火＋機場</div></div>
             <div class="amt" id="sub-2026-02-16">—</div>
             <div class="mini" id="cnt-2026-02-16">—</div>
           </div>
@@ -514,9 +515,9 @@
           <div class="field small">
             <label>日期</label>
             <select id="expDay">
-              <option value="2026-02-14">2/14（五）</option>
-              <option value="2026-02-15">2/15（六）</option>
-              <option value="2026-02-16">2/16（日）</option>
+              <option value="2026-02-14">2/14（六）</option>
+              <option value="2026-02-15">2/15（日）</option>
+              <option value="2026-02-16">2/16（一）</option>
             </select>
           </div>
 
@@ -609,35 +610,58 @@
   // =======================
   // Itinerary editable text (stored locally)
   // =======================
-  const ITIN_KEY = "sg_itinerary_text_v1";
+  const ITIN_KEY = "sg_itinerary_text_v2";
 
   const DEFAULT_ITIN = `
-【2/14（五）環球＋濱海灣夜景＋吃爆】
-04:00 抵達樟宜（無托運→快速出關）
-04:30–05:15 航廈內熱湯早餐（叻沙 / 魚丸湯麵 / 雲吞麵 / 粥）
-05:20–06:20 Jewel 空景散步（Rain Vortex 10:00 才開）
-06:20–06:45 回航廈前往 MRT
-07:00–08:15 MRT：Changi Airport → Tanah Merah → Outram Park → HarbourFront
-08:15–08:45 VivoCity L3 補水/整理/搭 Sentosa Express
-09:00–16:30 Universal Studios Singapore（開園直衝 Transformers / 木乃伊）
-16:30–17:30 回 Chinatown 放行李/休息
+【2/14（六）環球影城＋濱海灣夜景】
+04:00 抵達樟宜機場（無托運 → 快速出關）
+04:30–05:15 航廈內早餐
+05:20–06:20 Jewel 星耀樟宜（Rain Vortex）
+06:45 出發去 Sentosa
+09:00–16:30 Universal Studios Singapore（先衝 Transformers / 木乃伊）
+16:30–17:30 回 Chinatown 放行李/休息（Check-in：BEAT. 1932 青年旅舍@牛車水）
 18:00 魚尾獅公園（Merlion Park）
 19:45 Gardens by the Bay Supertree 燈光秀（免費）
-20:45 Lau Pa Sat 沙嗲封街（沙嗲/炒粿條/蠔煎）
-22:30 回 Chinatown
+20:45 Lau Pa Sat 沙嗲封街（沙嗲/炒粿條/煎蕊）
+22:30 回 Chinatown（宵夜/整理）
 
-【2/15（六）動物園＋夜生活＋吃爆】
-07:45 出發去 Zoo（Chinatown → Dhoby Ghaut → Khatib → Shuttle）
-09:00–14:00 Singapore Zoo
-14:00–17:00 回市區休息/沖澡
-17:30 Maxwell Food Centre（晚餐第一攤）
-19:00 Clarke Quay 河岸夜生活（酒吧/夜景）
-22:00 回 Chinatown 宵夜/整理行李（明天 05:00 出發）
+【2/15（日）文化層次日】
+09:30 出發去 Bugis（交通請看各點「🚇 交通」）
+10:00–12:00 Kampong Glam（蘇丹清真寺＋Haji Lane＋Arab Street）
+12:00 午餐（Bugis 區）
+13:30 前往 Tiong Bahru（交通請看各點「🚇 交通」）
+14:00–16:30 Tiong Bahru 文青區（咖啡店＋書店＋老公寓）
+16:45 前往 Marina Bay Sands（交通請看各點「🚇 交通」）
+17:45 Marina Bay Sands SkyPark（高空夜景）
+19:30 濱海灣晚餐（首選：Satay by the Bay；下雨備案：Makansutra Gluttons Bay）
+21:00 Clarke Quay 河岸夜生活（酒吧/夜景）
+22:30 回住宿休息（交通請看各點「🚇 交通」）
 
-【2/16（日）回程】
-04:30 起床/退房
-05:00 出發去機場（建議 Grab）
-08:10 起飛回台北
+【2/16（一）動物園＋跨年煙火】
+07:50 退房 Check-out（BEAT. 1932 青年旅舍@牛車水；11:00 前）
+08:00 出發去 Khatib（搭接駁去 Zoo；交通請看「🚇 交通」）
+08:50 Khatib 站外搭 Mandai Shuttle 前往 Singapore Zoo
+09:30–14:00 Singapore Zoo
+14:00 從 Zoo 回市區（交通請看「🚇 交通」）
+15:30–17:30 濱海灣商場回血（背包版輕鬆走）
+- 地點：Marina Bay Sands Shoppes / Marina Square / Suntec City
+- 行程：吹冷氣＋找咖啡店坐著充電＋補水
+- 背包行動方便，不需寄放行李
+- 之後直接前往 Maxwell 晚餐或 Bayfront 卡位，動線最順
+17:45 晚餐（Maxwell Food Centre）
+21:30 前往 Gardens by the Bay 卡位（交通請看「🚇 交通」）
+22:00 抵達 Gardens by the Bay 卡位
+00:00 River Hongbao 跨年煙火
+00:20 直接 Grab 前往 Changi Airport
+00:45 抵達機場休息（機場過夜最佳休息點）
+- 推薦：T1 / T2 出境大廳（公共座位多、動線直覺）
+- Quiet / Snooze Area：找「躺椅長椅」區（通常人較少，適合小睡）
+- 想洗澡：看是否順路使用付費淋浴/休息室（依現場/航廈為準）
+- 小提醒：冷氣強，帶薄外套；充電器/行動電源備好；護照與登機資料不要離身
+
+【2/17（二）回程】
+04:30 辦理登機
+06:10 起飛回台北
 `.trim();
 
   function loadItinerary(){
@@ -658,9 +682,52 @@
     const lines = String(text || "").split("\n");
     const container = document.getElementById("itineraryView");
     container.innerHTML = "";
+    try{
 
     // Render as sections with simple parsing: lines starting with 【...】 as headings
     const PLACE_META = [
+      {
+        keys: ["住宿", "住的地方", "hotel", "飯店", "民宿", "base", "beat", "1932", "beat. 1932", "青年旅舍", "beat 1932", "BEAT. 1932", "BEAT.1932"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Chinatown%2C_Singapore%2C_at_night.jpg?width=800",
+        alt: "住宿（BEAT. 1932 @ 牛車水）",
+        hours: "BEAT. 1932 青年旅舍@牛車水；靠近 Chinatown MRT（DT19/NE4）；退房 11:00",
+        route: `【回住宿（BEAT. 1932 @ 牛車水）】\n- 目標站：Chinatown（DT19 / NE4）\n- 到站後：依你當下出口走回 BEAT. 1932（通常 5–12 分鐘步行）\n- 如果你人在：\n  - Bayfront / Gardens by the Bay：搭 Downtown Line（DT）往 Bukit Panjang 方向 → Chinatown（DT19）下車\n  - Clarke Quay：搭 NE 線 1 站 → Chinatown（NE4）下車\n  - Downtown / Telok Ayer：搭 DT 線 1–2 站 → Chinatown（DT19）下車\n- 太累/下雨：Grab 直回最省腦\n- 退房日：11:00 前完成退房（背包行動 OK）`,
+      },
+      {
+        keys: ["bugis"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Bugis_Junction%2C_Singapore.jpg?width=800",
+        alt: "Bugis",
+        hours: "轉乘與商圈（去 Kampong Glam 很方便）",
+        route: `【到 Bugis】\n- 上車：Chinatown（DT19，Downtown Line）\n- 方向：往 Expo 方向（同一條線直達）\n- 下車：Bugis（DT14）\n- 走路：出站後往 Bugis Junction / Arab Street 一帶都很近（5–12 分鐘）`
+      },
+      {
+        keys: ["kampong", "glam", "甘榜格南", "蘇丹清真寺", "sultan mosque", "haji lane", "arab street"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Sultan_Mosque%2C_Singapore_-_2012.jpg?width=800",
+        alt: "Kampong Glam / Sultan Mosque",
+        hours: "建議 10:00 後到；拍照與逛街很舒服",
+        route: `【到 Kampong Glam（Sultan Mosque / Haji Lane）】\n- 最直覺：先到 Bugis（DT14 或 EW12）\n- 步行：Bugis 出站後走到 Sultan Mosque / Arab Street 約 8–15 分鐘\n- 下雨/太熱：直接 Grab 5–10 分鐘（很值得）`
+      },
+      {
+        keys: ["tiong bahru", "中峇魯", "中巴魯"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Tiong_Bahru_Market%2C_Singapore.jpg?width=800",
+        alt: "Tiong Bahru",
+        hours: "文青區（咖啡/書店/老公寓）",
+        route: `【到 Tiong Bahru】\n- 上車：Bugis（EW12，East West Line）\n- 方向：往 Tuas Link 方向\n- 下車：Tiong Bahru（EW17）\n- 出站：步行到咖啡店/書店/老公寓區約 5–15 分鐘（看你要去哪條街）`
+      },
+      {
+        keys: ["skypark", "mbs", "marina bay sands skypark", "金沙空中花園"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Marina_Bay_Sands_SkyPark_Observation_Deck.jpg?width=800",
+        alt: "Marina Bay Sands SkyPark",
+        hours: "建議 17:45 前後上去卡日落到夜景",
+        route: `【到 MBS SkyPark（Bayfront）】\n- 目標站：Bayfront（DT16 / CE1）\n- 從市區常用走法：\n  - 先到 Bugis（EW12 / DT14）→ 轉 Downtown Line（DT）往 Expo 方向 → Bayfront（DT16）下車\n- 到站後：跟著「Marina Bay Sands / The Shoppes」連通道走（約 8–12 分鐘）\n- SkyPark：依現場指示上到 Observation Deck（建議 17:45 左右到）`
+      },
+      {
+        keys: ["shoppes", "marina square", "suntec", "商場回血", "suntec city"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/The_Shopppes_at_Marina_Bay_Sands%2C_Singapore.jpg?width=800",
+        alt: "濱海灣商場（回血）",
+        hours: "吹冷氣/充電/補水最適合",
+        route: `【濱海灣商場回血】\n- 推薦：MBS Shoppes / Marina Square / Suntec City\n- 走累了就坐咖啡店，補水＋充電`
+      },
       {
         keys: ["jewel", "星耀", "樟宜"],
         img: "https://commons.wikimedia.org/wiki/Special:FilePath/Jewel%20Changi%20%28I%29.jpg?width=800",
@@ -689,47 +756,64 @@
         hours: "Supertree Garden Rhapsody：每日 19:45 & 20:45（免費）；15–16 Feb 17:30–18:30 Supertree Grove/Meadow 可能管制",
         route: `【到 Gardens by the Bay】\n- MRT：到 Bayfront(CE1/DT16) 後步行進園\n- 從 Merlion：步行約 20–30 分鐘（看天氣）或搭車更舒服`
       },
+      // ---- Satay by the Bay meta (before Lau Pa Sat) ----
       {
-        keys: ["lau pa sat", "lau", "pa", "sat", "老巴剎", "lau pa"],
+        keys: ["satay by the bay", "沙嗲灣", "海濱沙嗲", "satay-by-the-bay"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Satay%20by%20the%20Bay%2C%20Singapore.jpg?width=800",
+        alt: "Satay by the Bay",
+        hours: "戶外熟食中心；傍晚後最舒服（下雨就改室內備案）",
+        route: `【到 Satay by the Bay】\n- 從 MBS / Bayfront（DT16/CE1）：\n  ① 步行：走到 Gardens by the Bay（Supertree Grove）一帶 → 依指標到 Satay by the Bay（約 15–25 分鐘，視天氣/路線）\n  ② MRT：Bayfront（CE1）搭 Circle Line 往 Marina Bay 方向 1 站 → Gardens by the Bay（CE2）下車 → 再步行 8–12 分鐘\n- 下雨備案：改去 Makansutra Gluttons Bay（Esplanade 旁，較不怕雨）`
+      },
+      // ---- Makansutra Gluttons Bay meta (after Satay by the Bay) ----
+      {
+        keys: ["makansutra gluttons bay", "gluttons bay", "makansutra", "濱海灣美食灣", "美食灣"],
+        img: "https://commons.wikimedia.org/wiki/Special:FilePath/Esplanade%20-%20Theatres%20on%20the%20Bay%2C%20Singapore%20-%2020100224.jpg?width=800",
+        alt: "Makansutra Gluttons Bay",
+        hours: "Esplanade 旁；下雨備案很穩（吃完直接散步看夜景）",
+        route: `【到 Makansutra Gluttons Bay（Esplanade 旁）】\n- 從 MBS / Bayfront：\n  ① 步行：走 Helix Bridge 往 Esplanade / Merlion 方向（約 12–20 分鐘）\n  ② MRT：Bayfront（CE1）搭 Circle Line 往 Dhoby Ghaut 方向 → Promenade（CC4）下車 → 步行 8–12 分鐘到 Esplanade 外側美食區\n- 吃完回住宿：就近回 Bayfront / Promenade 搭 MRT，或直接 Grab`
+      },
+      // ---- Lau Pa Sat meta (after Satay by the Bay & Makansutra Gluttons Bay) ----
+      {
+        keys: ["lau pa sat", "老巴剎", "lau-pa-sat"],
         img: "https://commons.wikimedia.org/wiki/Special:FilePath/Lau%20Pa%20Sat.JPG?width=800",
         alt: "Lau Pa Sat",
         hours: "多數攤位到晚間；沙嗲街通常傍晚後最熱鬧（實際以現場為準）",
-        route: `【到 Lau Pa Sat】\n- MRT：Downtown(DT17) / Telok Ayer(DT18) 下車步行 6–12 分鐘\n- 吃完回 Chinatown：搭 DT 線回 Chinatown(DT19) 或 Grab`
+        route: `【到 Lau Pa Sat】\n- 目標站：Downtown（DT17）或 Telok Ayer（DT18）\n- 從 Gardens by the Bay / Bayfront：\n  - 上車：Bayfront（DT16）\n  - 方向：往 Bukit Panjang 方向\n  - 下車：Downtown（DT17）或 Telok Ayer（DT18）\n  - 步行：6–12 分鐘到 Lau Pa Sat\n- 吃完回住宿：搭 DT 線回 Chinatown（DT19）或 Grab`
       },
       {
         keys: ["zoo", "動物園", "mandai"],
         img: "https://commons.wikimedia.org/wiki/Special:FilePath/Entrance%20-%20Singapore%20Zoo%20%2801%29.jpg?width=800",
         alt: "Singapore Zoo",
         hours: "Singapore Zoo：每日 08:30–18:00（最後入園 17:00）",
-        route: `【到 新加坡動物園（最順）】\n- MRT：Chinatown(NE4) → Dhoby Ghaut(NE6/NS24) → Khatib(NS14)\n- Khatib 站外搭 Mandai Khatib Shuttle 直達 Zoo`
+        route: `【到 新加坡動物園（Singapore Zoo）】\n- 上車：Chinatown（NE4，North East Line）\n- 方向：往 Punggol 方向 → 搭到 Dhoby Ghaut（NE6）下車\n- 轉乘：跟著指標轉 North South Line（NS）\n- 再搭：Dhoby Ghaut（NS24）往 Jurong East 方向 → Khatib（NS14）下車\n- 出站：Khatib 出站後跟著「Mandai Shuttle」指標到站外接駁點\n- 接駁：搭 Mandai Khatib Shuttle → Singapore Zoo（車程約 10–20 分鐘，依路況）\n- 回程：原路接駁回 Khatib 再搭 MRT 回市區`
       },
 {
   keys: ["maxwell"],
   img: "https://commons.wikimedia.org/wiki/Special:FilePath/Maxwell_Food_Centre%2C_Singapore.JPG?width=800",
   alt: "Maxwell Food Centre",
   hours: "熟食中心營業時間各攤不同；建議 17:30 後晚餐時段去",
-  route: `【到 Maxwell Food Centre】\n- 從 Chinatown：走路約 10–20 分鐘（看你住哪一側）\n- 或 MRT：Outram Park / Tanjong Pagar 附近下車步行`
+  route: `【到 Maxwell Food Centre】\n- 從住宿（Chinatown）：步行約 10–20 分鐘（看你走哪條路）\n- 或 MRT：\n  - 到 Outram Park（EW16/NE3/TE17）或 Tanjong Pagar（EW15）下車\n  - 再步行 8–15 分鐘\n- 晚餐尖峰：Grab 最省腦`
 },
       {
         keys: ["clarke", "quay", "克拉碼頭"],
         img: "https://commons.wikimedia.org/wiki/Special:FilePath/Clarke%20Quay%2C%20Singapore%2C%20at%20night%20-%2020070202-02.jpg?width=800",
         alt: "Clarke Quay",
         hours: "夜生活區；酒吧/餐廳多在傍晚後開始熱鬧",
-        route: `【到 Clarke Quay】\n- MRT：Chinatown(NE4) → Clarke Quay(NE5)（1 站）\n- 或走路約 12–20 分鐘（看路線）`
+        route: `【到 Clarke Quay】\n- 上車：Chinatown（NE4）\n- 方向：往 HarbourFront 方向 1 站\n- 下車：Clarke Quay（NE5）\n- 或走路：12–20 分鐘（看路線）`
       },
      {
   keys: ["chinatown", "牛車水", "唐人街", "回 chinatown", "回chinatown"],
   img: "https://commons.wikimedia.org/wiki/Special:FilePath/Smith%20Street%2C%20Singapore%2C%202014.JPG?width=800",
   alt: "Chinatown (Smith Street)",
   hours: "住宿區/美食區；晚餐與宵夜選擇多（店家營業依各店為準）",
-  route: `【回 Chinatown（住宿區）】\n- MRT：就近搭 NE/DT 線回 Chinatown（看你人在 HarbourFront / Bayfront / Downtown 一帶）\n- 省腦：Grab 回住宿最舒服（尤其玩累/下雨）`
+  route: `【到 / 回 Chinatown（住宿區）】\n- 目標站：Chinatown（DT19 / NE4）\n- 從 Bayfront：DT 線往 Bukit Panjang 方向 → Chinatown（DT19）下車\n- 從 Downtown/Telok Ayer：DT 線 1–2 站 → Chinatown（DT19）下車\n- 最省腦：Grab 回住宿（尤其玩累/下雨）`
 },
 {
   keys: ["機場", "changi", "sin"],
   img: "https://commons.wikimedia.org/wiki/Special:FilePath/Changi_Airport%2C_Terminal_1%2C_Departure_Hall.JPG?width=800",
   alt: "Changi Airport (T1 Departure Hall)",
   hours: "機場 24 小時；清晨 MRT 班距較長，建議抓多一點時間",
-  route: `【回機場】\n- 省力：Grab 直達 T1/T2（最穩）\n- MRT：Chinatown(DT19) → Expo(DT35) → 轉 CG 線到 Changi Airport(CG2)\n（清晨班距較長，抓多一點時間）`
+  route: `【回機場（Changi Airport）】\n- 最穩：Grab 直達 T1/T2（深夜/清晨尤其省腦）\n- MRT（備案）：\n  - 上車：Chinatown（DT19，Downtown Line）\n  - 方向：往 Expo 方向 → Expo（DT35）下車\n  - 轉乘：換 Changi Airport 支線（CG）\n  - 下車：Changi Airport（CG2）\n- 提醒：清晨班距較長，抓多一點時間`
 },
     ];
 
@@ -770,6 +854,24 @@
       const line = rawLine.trim();
       if(!line) continue;
 
+      // Hide bullet detail lines in the read-only timeline (keep the main titles)
+      if (line.startsWith("-")) continue;
+
+  const isTransportOnly = (s)=>{
+  const x = String(s||"").trim();
+  if(!x) return false;
+
+  // ✅ 住宿/基地資訊不要當成交通丟掉
+  if (/^住宿[:：]/.test(x)) return false;
+
+  // 交通指示通常是「以交通字眼開頭」或有箭頭路線
+  const starts = /^(MRT|捷運|地鐵|步行|走路|Grab|計程車|Shuttle|接駁|巴士|公車|前往\s*MRT)[:：]?\b/i;
+  const hasArrow = /(→|->)/.test(x);
+  const explicitMrtRoute = /^(\d{1,2}:\d{2}(?:–\d{1,2}:\d{2})?\s+)?MRT[:：]/i.test(x);
+
+  return hasArrow || starts.test(x) || explicitMrtRoute;
+};
+
       const m = line.match(/^【(.+)】$/);
       if(m){
         newSection(m[1]);
@@ -797,19 +899,71 @@
       }
 
       // Per-item photo + transport
-      const textMain = rest || line;
+      // Use the original text for matching; do NOT surface route details in the main timeline.
+      const originalMain = (rest || line).trim();
+
+      // If it's a transport-only row (MRT/Grab/shuttle/walk instructions), hide it from the main timeline.
+      // Transport details are accessible via each place card's "🚇 交通" panel.
+      if (isTransportOnly(originalMain)) continue;
+
+      // Main display title should be the non-transport headline.
+      let textMain = originalMain;
+
+      // If a line starts with "MRT：" etc, it will have been skipped above.
+      // Keep titles short: drop long parenthesis-only route details like "前往 MRT（...很長...）"
+      if (/\b前往\s*MRT（/.test(textMain)) {
+        textMain = textMain.split("（")[0].trim();
+      }
+
       const pm = getPlaceMeta(textMain);
+      // If the line explicitly says "住宿：..." treat it as lodging meta
+      const pmFixed = pm || (textMain.startsWith("住宿") ? getPlaceMeta("住宿") : null);
       let routeFromLast = "";
-      if(lastPlaceMeta && pm && lastPlaceMeta !== pm){
-        routeFromLast = `【從 ${lastPlaceMeta.alt} → ${pm.alt}】\n- 建議：Google Maps 大眾運輸模式\n- 或 Grab（時間換方便）`;
+      if(lastPlaceMeta && pmFixed && lastPlaceMeta !== pmFixed){
+        // simple handcrafted transfer hints for the most common pairs in this itinerary
+        const A = lastPlaceMeta.alt;
+        const B = pmFixed.alt;
+        const key = `${A} -> ${B}`;
+
+        const pairHints = {
+          "住宿（BEAT. 1932 @ 牛車水） -> Bugis": `【從 住宿（Chinatown）→ Bugis】\n- MRT：DT 線直達（最省腦）\n- 約 10–15 分鐘＋步行`,
+          "Bugis -> Kampong Glam / Sultan Mosque": `【從 Bugis → Kampong Glam】\n- 步行 8–15 分鐘（好逛好拍）\n- 太熱/下雨：Grab 5–10 分鐘`,
+          "Kampong Glam / Sultan Mosque -> Bugis": `【從 Kampong Glam → Bugis】\n- 步行 8–15 分鐘\n- 太熱/下雨：Grab`,
+          "Bugis -> Tiong Bahru": `【從 Bugis → Tiong Bahru】\n- MRT：EW 線（Bugis EW12 → Tiong Bahru EW17）\n- 約 15–20 分鐘`,
+          "Tiong Bahru -> Marina Bay Sands SkyPark": `【從 Tiong Bahru → MBS SkyPark（Bayfront）】\n- 上車：Tiong Bahru（EW17，往 Pasir Ris 方向）\n- 搭到：Bugis（EW12）下車\n- 轉乘：跟著「Downtown Line / DT」指標轉到 Bugis（DT14）\n- 再搭：Downtown Line 往 Expo 方向 → 到 Bayfront（DT16/CE1）下車\n- 出站：跟著「Marina Bay Sands / The Shoppes」連通道走（約 8–12 分鐘）\n- 太累/下雨：直接 Grab 省腦`,
+          "Merlion Park -> Gardens by the Bay": `【從 魚尾獅公園 → Gardens by the Bay】\n- MRT/步行皆可：天氣熱建議搭車\n- Grab 約 5–12 分鐘`,
+          "Gardens by the Bay -> Lau Pa Sat": `【從 Gardens by the Bay → Lau Pa Sat】\n- 走到 Bayfront（DT16/CE1）進站\n- 搭 Downtown Line（DT）往 Bukit Panjang 方向\n- 下車：Downtown（DT17）或 Telok Ayer（DT18）\n- 再步行 6–12 分鐘`,
+          "Lau Pa Sat -> Chinatown (Smith Street)": `【從 Lau Pa Sat → Chinatown】\n- MRT：Downtown/Telok Ayer → Chinatown\n- 或 Grab`,
+          "Singapore Zoo -> 濱海灣商場（回血）": `【從 動物園 → 濱海灣商場】\n- 建議先回市區再前往濱海灣\n- 太累：Grab 直接去商場最舒服`,
+          "濱海灣商場（回血） -> Maxwell Food Centre": `【從 濱海灣商場 → Maxwell】\n- MRT：到 Tanjong Pagar/Outram Park 一帶再步行\n- 或 Grab（晚餐尖峰更省腦）`,
+          "Maxwell Food Centre -> Gardens by the Bay": `【從 Maxwell → Gardens by the Bay】\n- MRT：到 Bayfront 後步行進園\n- 或 Grab`,
+          "Gardens by the Bay -> Changi Airport (T1 Departure Hall)": `【從 Gardens by the Bay → 機場】\n- 最穩：Grab 直達 T1/T2\n- MRT：Bayfront → Expo → Changi Airport（班距注意）`,
+          "Marina Bay Sands SkyPark -> Satay by the Bay": `【從 SkyPark → Satay by the Bay】\n- 走法（最順）：沿 MBS / Helix Bridge 方向走到 Gardens by the Bay → 跟指標到 Satay by the Bay（約 15–25 分鐘）\n- MRT（更省力）：Bayfront（CE1）→ Gardens by the Bay（CE2）1 站 → 走 8–12 分鐘\n- 下雨：改去 Makansutra Gluttons Bay（Esplanade 旁）`,
+          // --- New food/nightlife entries ---
+          "Satay by the Bay -> Clarke Quay": `【從 Satay by the Bay → Clarke Quay】\n- 先走回 Bayfront（DT16/CE1）或就近叫 Grab\n- MRT（建議）：\n  - 上車：Bayfront（DT16）\n  - 方向：往 Bukit Panjang 方向\n  - 下車：Chinatown（DT19）\n  - 轉乘：跟著指標轉 North East Line（NE）\n  - 再搭：Chinatown（NE4）往 Punggol 方向 1 站 → Clarke Quay（NE5）下車\n- 懶人：Grab 直達（晚間更方便）`,
+          "Makansutra Gluttons Bay -> Clarke Quay": `【從 Makansutra Gluttons Bay（Esplanade）→ Clarke Quay】\n- 步行：沿河走到 Clarke Quay 約 15–25 分鐘（夜景很棒）\n- MRT：\n  - 上車：Esplanade（CC3）\n  - 方向：往 HarbourFront 方向 1 站\n  - 下車：Promenade（CC4）\n  - 轉乘：走連通道轉 Downtown Line（DT）\n  - 再搭：Promenade（DT15）往 Bukit Panjang 方向 1 站 → Chinatown（DT19）\n  - 轉乘：換 North East Line（NE）\n  - 再搭：Chinatown（NE4）往 Punggol 方向 1 站 → Clarke Quay（NE5）下車\n- 懶人：Grab 直達`
+        };
+
+        routeFromLast = pairHints[key] || `【從 ${A} → ${B}】\n- 建議：Google Maps 大眾運輸模式\n- 或 Grab（時間換方便）`;
       }
 
       const li = document.createElement("li");
       li.className = "titem";
 
-      const thumbHtml = pm ? `<img class="tthumb" loading="lazy" referrerpolicy="no-referrer" alt="${escapeHtml(pm.alt || "")}" src="${pm.img}" />` : "";
-      const actionsHtml = pm ? `<div class="tactions"><button type="button" class="ghost tbtn" data-transport="1" aria-expanded="false">🚇 交通</button></div>` : "";
-      const panelHtml = pm ? `<div class="tpanel" data-panel="1"><div class="route">${escapeHtml(pm.route || "")}${routeFromLast ? "\n\n" + escapeHtml(routeFromLast) : ""}</div></div>` : "";
+      const thumbHtml = pmFixed
+        ? `<img class="tthumb" loading="lazy" referrerpolicy="no-referrer"
+                data-seed="${escapeHtml((pmFixed.alt || "place").toLowerCase().replaceAll(" ","-"))}"
+                alt="${escapeHtml(pmFixed.alt || "")}"
+                src="${pmFixed.img}" />`
+        : "";
+      const actionsHtml = pmFixed ? `<div class="tactions"><button type="button" class="ghost tbtn" data-transport="1" aria-expanded="false">🚇 交通</button></div>` : "";
+      const routeText = (routeFromLast || (pmFixed && pmFixed.route) || "").trim();
+      const extraNote = (routeFromLast && pmFixed && pmFixed.route)
+        ? `\n\n【補充（該景點一般資訊）】\n${pmFixed.route}`
+        : "";
+      const panelHtml = pmFixed
+        ? `<div class="tpanel" data-panel="1"><div class="route">${escapeHtml(routeText + extraNote)}</div></div>`
+        : "";
 
       li.innerHTML = `
         <div class="time">${escapeHtml(time || "•")}</div>
@@ -818,7 +972,7 @@
             ${thumbHtml}
             <div class="ttext">
               <div class="place">${escapeHtml(textMain)}</div>
-              ${pm && pm.hours ? `<div class="note">🕒 ${escapeHtml(pm.hours)}</div>` : ``}
+${pmFixed && pmFixed.hours ? `<div class="note">🕒 ${escapeHtml(pmFixed.hours)}</div>` : ``}
             </div>
           </div>
           ${actionsHtml}
@@ -827,7 +981,7 @@
       `;
 
       // wire toggle
-      if(pm){
+      if(pmFixed){
         const btn = li.querySelector('[data-transport="1"]');
         const panel = li.querySelector('[data-panel="1"]');
         if(btn && panel){
@@ -840,9 +994,26 @@
       }
 
       current.appendChild(li);
-      if(pm){ lastPlaceMeta = pm; }
+      // Image fallback: if Wikimedia/remote image fails, use a stable placeholder
+      const imgEl = li.querySelector("img.tthumb");
+      if (imgEl) {
+        imgEl.addEventListener("error", () => {
+          const seed = imgEl.getAttribute("data-seed") || "singapore";
+          imgEl.src = `https://picsum.photos/seed/${encodeURIComponent(seed)}/420/280`;
+        }, { once: true });
+      }
+      if(pmFixed){ lastPlaceMeta = pmFixed; }
     }
+  }catch(e){
+    console.error("renderItineraryView failed:", e);
+    container.innerHTML = `
+      <div class="pill" style="border-color: rgba(255,204,102,.45); background: rgba(255,204,102,.10);">
+        ⚠️ 行程顯示渲染失敗（可能是剛剛的交通文字格式造成 JS 解析錯誤）。我先用純文字顯示避免整個空白。
+      </div>
+      <pre class="route" style="margin-top:10px; white-space:pre-wrap;">${escapeHtml(String(text||""))}</pre>
+    `;
   }
+}
 
   function escapeHtml(str){
     return String(str)
@@ -859,9 +1030,9 @@
   const LS_KEY = "sg_itinerary_budget_v3";
 
   const DAYS = [
-    { key: "2026-02-14", label: "2/14", note: "USS＋濱海灣" },
-    { key: "2026-02-15", label: "2/15", note: "動物園＋夜生活" },
-    { key: "2026-02-16", label: "2/16", note: "回程早上" },
+    { key: "2026-02-14", label: "2/14", note: "環球＋濱海灣" },
+    { key: "2026-02-15", label: "2/15", note: "文化層次日" },
+    { key: "2026-02-16", label: "2/16", note: "動物園＋煙火＋機場" },
   ];
 
   function fmtMoney(n){
@@ -903,7 +1074,7 @@
     const expenses = window.__expenses || [];
     const spent = expenses.reduce((sum, e)=> sum + (parseFloat(e.amount)||0), 0);
     const remaining = budgetTotal - spent;
-    const perDay = remaining / 2; // 2 full days (2/14 & 2/15)
+    const perDay = remaining / 3; // 3 days (2/14–2/16)
     const perPerson = spent / people;
 
     const spentEl = document.getElementById("spent");
